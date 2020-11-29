@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["dom", "esnext", "es2020", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {},
+    "target": "ES6"
+  },
+  "include": ["*/*", "*/**/*", "*/**/**/*", "*/**/**/**/*", "*/**/**/**/**/*"]
+}

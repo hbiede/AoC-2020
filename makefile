@@ -1,25 +1,35 @@
+# Setup
+# Removes leading zero from given day
+FILE_EXTENSION := ts
+SHORT_DAY := $(shell echo ${DAY} | awk 'sub(/^0*/, "", $$1)')
+COOKIE_FILE := cookies.txt
+SESSION ?= ${shell cat ${COOKIE_FILE}}
+YEAR ?= 2020
+
 # Formatting
 H=$(shell tput -Txterm setaf 3; tput bold)
 B=$(shell tput bold; tput smul)
 X=$(shell tput sgr0)
 
-# Removes leading zero from given day
-SHORT_DAY := $(shell echo ${DAY} | awk 'sub(/^0*/, "", $$1)')
-COOKIE_FILE := cookies.txt
-SESSION ?= ${shell cat ${COOKIE_FILE}}
-YEAR ?= 2019
-
+## Alias for setupDay
 default: setupDay
 
-setupDay: download src/day${DAY}/solution.go
+## Downloads necessary files and clones the template file (e.g. make DAY=02)
+setupDay: src/day${DAY}/solution.${FILE_EXTENSION} download
 
-## Downloads the instructions and inputs for a day (e.g. make DAY=02)
+## Call to run your code
+run: src/day${DAY}/solution.ts
+	tsc src/day${DAY}/solution.ts
+	node src/day${DAY}/solution.js
+
+## Downloads the instructions and inputs for a day
 download: src/day${DAY}/README.md src/day${DAY}/input.txt
 
-## Adjust here when you have created a template file
-src/day${DAY}/solution.go:
+# Adjust here when you have created a template file
+src/day${DAY}/solution.${FILE_EXTENSION}:
 	@echo "${H}=== Copying template for day ${SHORT_DAY} ===${X}"
-	@sed -e "s/!DAY!/${DAY}/g" -e "s/MAIN/main/" src/template/template.go > src/day${DAY}/solution.go
+	@mkdir -p src/day${DAY}
+	@sed -e "s/!DAY!/${DAY}/g" -e "s/MAIN/main/" src/template/template.${FILE_EXTENSION} > src/day${DAY}/solution.${FILE_EXTENSION}
 
 src/day${DAY}/input.txt:
 	@echo "${H}=== Downloading input for day ${SHORT_DAY} ===${X}"
@@ -29,19 +39,18 @@ src/day${DAY}/README.md: src/day${DAY}/challenge.html
 	@echo "${H}=== Parsing input ===${X}"
 	@./scripts/parse_challenge.sh ${DAY}
 
-## The AOC_COOKIE environment variable should contain a complete session cookie in order to be able to use the make download target
 src/day${DAY}/challenge.html:
 	@echo "${H}=== Downloading challenge for day ${SHORT_DAY} ===${X}"
-	@mkdir -p src/day${DAY}
 	@curl -s -b "session=${SESSION}" https://adventofcode.com/${YEAR}/day/${SHORT_DAY} > src/day${DAY}/challenge.html
 
 
-## The AOC_COOKIE environment variable should contain a complete session cookie in order to be able to use the make download target
+## Update the readme with the latest AoC stats
 stats:
 	@echo "${H}=== Creating Stats Table ===${X}"
 	@$(eval TABLE = $(shell python3 scripts/generate_stats.py ${COOKIE_FILE} ${YEAR}))
 	@sed 's/STATS_TABLE/${TABLE}/g' README_template.md | awk '{gsub(/~~/,"\n")}1' > README.md
 
+## Create necessary files for the new repo
 setup:
 	@echo "${H}=== Creating Necessary Directories ===${X}"
 	@mkdir -p src/template

@@ -1,5 +1,14 @@
 #! /bin/bash
 
+# Install pup if needed
+if ! hash pup 2>/dev/null; then
+  brew install pup;
+fi
+
+if ! hash recode 2>/dev/null; then
+  brew install recode;
+fi
+
 # Extract challenge from HTML page.
 cat src/day${1}/challenge.html | pup 'article' > /tmp/challenge00.md
 

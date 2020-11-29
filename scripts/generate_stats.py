@@ -19,7 +19,7 @@ USER_AGENT = {"User-Agent": "advent-of-code-stats-gen v{}".format(VERSION)}
 
 
 def get_stats(cookie: dict, years=None) -> Dict[Tuple[Union[int, Any], int], OrderedDict]:
-    # modified verion of equivalent function from https://github.com/wimglenn
+    # modified version of equivalent function from https://github.com/wimglenn
     aoc_now = datetime.now()
     if years is None:
         years = range(2015, aoc_now.year + int(aoc_now.month == 12))
@@ -37,7 +37,11 @@ def get_stats(cookie: dict, years=None) -> Dict[Tuple[Union[int, Any], int], Ord
         try:
             stats_txt = soup.article.pre.text
         except AttributeError:
-            print("Give a valid session cookie")
+            if year == aoc_now.year and aoc_now.month < 12:
+                print("Must wait until AoC starts")
+            else:
+                print("Give a valid session cookie")
+
             sys.exit(1)
         lines = stats_txt.splitlines()
         lines = [x for x in lines if x.split()[0] in days]
@@ -123,12 +127,13 @@ def print_table(results: Dict[Tuple[Union[int, Any], int], OrderedDict]) -> None
                               time[1].seconds % 60, rank[1], score[1]) + NEW_LINE_REPLACER
         else:
             output_string += ("|  %02s | %02d:%02d:%02d (%5d) (%3d)     | %-26s |" % (day_string,
-                                                                                   int((time[0].seconds + 86440 * time[
-                                                                                       0].days) / 3600),
-                                                                                   (int(time[0].seconds) / 60) % 60,
-                                                                                   time[0].seconds % 60,
-                                                                                   rank[0], score[0],
-                                                                                   "Unfinished")) + NEW_LINE_REPLACER
+                                                                                      int((time[0].seconds + 86440 *
+                                                                                           time[
+                                                                                               0].days) / 3600),
+                                                                                      (int(time[0].seconds) / 60) % 60,
+                                                                                      time[0].seconds % 60,
+                                                                                      rank[0], score[0],
+                                                                                      "Unfinished")) + NEW_LINE_REPLACER
 
     # average the results
     total_time[0], total_time[1] = total_time[0] / len(results), total_time[1] / len(results)
@@ -190,22 +195,22 @@ def _get_stat_column(results: Dict[Tuple[Union[int, Any], int], Dict], column: s
         -> (Dict[int, Any], Dict[int, Any]):
     col_a = OrderedDict()
     col_b = OrderedDict()
-    maxDayFinished = 0
+    max_day_finished = 0
     for entry in results:
-        if entry[1] > maxDayFinished:
-            maxDayFinished = entry[1]
+        if entry[1] > max_day_finished:
+            max_day_finished = entry[1]
         if 'a' in results[entry].keys():
             col_a[entry[1]] = results[entry]['a'][column]
         if 'b' in results[entry].keys():
             col_b[entry[1]] = results[entry]['b'][column]
 
-    for i in range(1,maxDayFinished):
-        if not(i in col_a):
+    for i in range(1, max_day_finished):
+        if not (i in col_a):
             if column == "time":
                 col_a[i] = timedelta(seconds=-1)
             else:
                 col_a[i] = -1
-        if not(i in col_b):
+        if not (i in col_b):
             if column == "time":
                 col_b[i] = timedelta(seconds=-1)
             else:
