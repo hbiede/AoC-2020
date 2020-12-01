@@ -1,5 +1,7 @@
 # AoC-2019
-[Advent of Code](adventofcode.com) Solutions for 2020 in TypeScript.
+[Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
+
+![<ORG_NAME>](https://circleci.com/gh/hbiede/AoC-2020.svg?style=svg)
 
 ## Highlights:
 
