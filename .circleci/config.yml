@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 orbs:
   node: circleci/node@3.0.0
 references:
@@ -49,8 +49,13 @@ jobs:
   test:
     <<: *defaults
     steps:
+      - checkout
+      - add_ssh_keys
       - node/install:
-            install-yarn: true
+          install-npm: false
+          node-version: 15.0.1
+      - node/install-yarn:
+          version: 1.22.10
       - *restore_node_modules
       - *yarn
       - *save_node_modules
