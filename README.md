@@ -1,12 +1,10 @@
 # AoC-2019
-[Advent of Code](adventofcode.com) Solutions for 2019 in (LANGUAGE).
+[Advent of Code](adventofcode.com) Solutions for 2020 in TypeScript.
 
 ## Highlights:
 
 #### Favorite problems:
 
-* 
-* 
 * 
 
 #### Interesting approaches:
@@ -18,12 +16,16 @@
 * 
 
 ## Stats
-Must wait until AoC starts
+| Day | Part 1 Time (Rank) (Score) | Part 2 Time (Rank) (Score) |
+|----:|----------------------------|----------------------------|
+|   1 | 00:14:05 ( 2536) (  0)     | 00:17:41 ( 2486) (  0)     |
+| Avg | 00:14:05 ( 2536) (  0)     | 00:17:41 ( 2486) (  0)     |
+
 
 <img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400>
 <img alt="Part 2 Time Stats" src="statsImages/part2time.png" width=400> <img alt="Part 2 Rank" src="statsImages/part2rank.png" width=400>
 
-Note: Times are from time of challenge release, not my start time to completion time
+Note: Times are from time of challenge release, not start time to completion time
 
 ## Scripting initially based on a script from [Ullaakut](https://github.com/Ullaakut/aoc19). Expanded upon by [HBiede](https://github.com/hbiede)
 #### Makefile Automation
@@ -33,4 +35,4 @@ Note: Times are from time of challenge release, not my start time to completion 
   * Per Ullaakut, this part still needs a bit of work, as multiline code blocks are not supported yet, and formatting (bold, italics etc.) is lost.
 * Setup the new day's source file from a template file while downloading the input and challenge per above (e.g.: `make DAY=03`)
 * Create the stats table above by calling `make stats`
-  * May require calling `sh scripts/install_stats_dependencies.sh` to ensure you have all the necessary python dependencies
+  * May require calling `pip3 install -r requirements.txt` to ensure you have all the necessary python dependencies

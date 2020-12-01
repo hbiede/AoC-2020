@@ -2,7 +2,8 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "esnext", "es2020", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "lib": ["dom", "esnext", "es5", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
@@ -11,7 +12,8 @@
     "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {},
-    "target": "ES6"
+    "target": "ESNext",
+    "module": "CommonJS"
   },
   "include": ["*/*", "*/**/*", "*/**/**/*", "*/**/**/**/*", "*/**/**/**/**/*"]
 }
