@@ -38,5 +38,6 @@
   },
   "jest-junit": {
     "outputDirectory": "./reports/jest"
-  }
+  },
+  "version": "0.0.0"
 }
