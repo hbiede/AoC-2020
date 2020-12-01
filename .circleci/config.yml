@@ -1,0 +1,69 @@
+version: 2
+orbs:
+  node: circleci/node@3.0.0
+references:
+  defaults: &defaults
+    docker:
+      - image: 'cimg/base:stable'
+    working_directory: ~/aoc-2020
+
+  # Cache keys for node_modules
+  npm_cache_key: &npm_cache_key npm-dependencies-{{ .Branch }}-{{ checksum "yarn.lock" }}
+  npm_backup_cache_key_1: &npm_backup_cache_key_1 npm-dependencies-{{ .Branch }}-
+  npm_backup_cache_key_2: &npm_backup_cache_key_2 npm-dependencies-
+
+  restore_node_modules: &restore_node_modules
+    restore_cache:
+      keys:
+        - *npm_cache_key
+        - *npm_backup_cache_key_1
+        - *npm_backup_cache_key_2
+
+  save_node_modules: &save_node_modules
+    save_cache:
+      key: *npm_cache_key
+      paths:
+        - node_modules
+
+  ts_test: &ts_test
+    run:
+      name: Yarn tsc
+      command: yarn tsc
+
+  test: &test
+    run:
+      name: Yarn test
+      command: yarn test --maxWorkers 2
+
+  eslint: &eslint
+    run:
+      name: Yarn eslint
+      command: yarn eslint --format junit --output-file ./reports/eslint/eslint.xml
+
+  yarn: &yarn
+    run:
+      name: Yarn
+      command: yarn
+
+jobs:
+  test:
+    <<: *defaults
+    steps:
+      - node/install:
+            install-yarn: true
+      - *restore_node_modules
+      - *yarn
+      - *save_node_modules
+      - *eslint
+      - *test
+      - *ts_test
+      - store_test_results:
+          path: reports
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test:
+          filters:
+            branches:
+              only: master
