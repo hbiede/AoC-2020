@@ -1,5 +1,8 @@
 cookies.txt
 
+src/**/*.js
+src/**/**/*.js
+
 # Logs
 logs
 *.log
