@@ -204,7 +204,7 @@ const input = [
 ];
 
 describe('day 1', () => {
-  it('should solve part 1with my assigned input', () => {
+  it('should solve part 1 with my assigned input', () => {
     expect(part1(input)).toBe(787776);
   });
   it('should solve part 2 with my assigned input', () => {
