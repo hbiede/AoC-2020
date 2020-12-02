@@ -19,8 +19,7 @@ setupDay: src/day${DAY}/solution.${FILE_EXTENSION} download
 
 ## Call to run your code
 run: src/day${DAY}/solution.ts
-	tsc src/day${DAY}/solution.ts
-	node src/day${DAY}/solution.js
+	ts-node src/day${DAY}/solution.ts
 
 ## Downloads the instructions and inputs for a day
 download: src/day${DAY}/README.md src/day${DAY}/input.txt
