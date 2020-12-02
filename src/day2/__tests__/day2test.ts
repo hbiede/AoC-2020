@@ -1003,12 +1003,20 @@ const input = [
   '16-19 t: tttttttttttttttttttt',
 ];
 
+const exampleInput = ['1-3 a: abcde', '1-3 b: cdefg', '2-9 c: ccccccccc'];
+
 describe('day 2', () => {
   it('should be able to count valid input', () => {
     expect(validCounter(input, () => true)).toBe(input.length);
   });
+  it('should solve part 1 with example input', () => {
+    expect(part1(exampleInput)).toBe(2);
+  });
   it('should solve part 1 with my assigned input', () => {
     expect(part1(input)).toBe(591);
+  });
+  it('should solve part 2 with example input', () => {
+    expect(part2(exampleInput)).toBe(1);
   });
   it('should solve part 2 with my assigned input', () => {
     expect(part2(input)).toBe(335);

@@ -203,9 +203,17 @@ const input = [
   1975,
 ];
 
+const exampleInput = [1721, 979, 366, 299, 675, 1456];
+
 describe('day 1', () => {
+  it('should solve part 1 with example input', () => {
+    expect(part1(exampleInput)).toBe(514579);
+  });
   it('should solve part 1 with my assigned input', () => {
     expect(part1(input)).toBe(787776);
+  });
+  it('should solve part 2 with example input', () => {
+    expect(part2(exampleInput)).toBe(241861950);
   });
   it('should solve part 2 with my assigned input', () => {
     expect(part2(input)).toBe(262738554);
