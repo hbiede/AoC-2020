@@ -1,10 +1,10 @@
 import { inputAsText } from '../utils/InputProcessor';
 
-const part1 = (input: string): number => {
+export const part1 = (input: string): number => {
   return -1;
 };
 
-const part2 = (input: string): number => {
+export const part2 = (input: string): number => {
   return -1;
 };
 
