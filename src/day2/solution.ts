@@ -5,10 +5,10 @@ type Count = {
   high: number;
 };
 
-const validCounter = (
+export const validCounter = (
   input: string[],
   passwordIsValid: (count: Count, letter: string, password: string) => boolean
-) => {
+): number => {
   const regex = /(\d+)-(\d+)\s(\w):\s(.+)/;
   return input
     .filter((password) => password.length > 0)
@@ -29,7 +29,7 @@ const validCounter = (
     .reduce((acc, truth) => acc + (truth ? 1 : 0), 0);
 };
 
-const part1 = (input: string[]): number => {
+export const part1 = (input: string[]): number => {
   const passwordIsValid = (
     count: Count,
     letter: string,
@@ -43,7 +43,7 @@ const part1 = (input: string[]): number => {
   return validCounter(input, passwordIsValid);
 };
 
-const part2 = (input: string[]): number => {
+export const part2 = (input: string[]): number => {
   const passwordIsValid = (
     count: Count,
     letter: string,
