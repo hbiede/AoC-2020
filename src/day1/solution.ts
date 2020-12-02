@@ -1,35 +1,39 @@
 import { inputAsNumArray } from '../utils/InputProcessor';
 
 export const part1 = (input: number[]): number => {
-  const record1 =
-    input.find(
-      (record1) =>
-        record1 < 2020 &&
-        input.find((record2) => record1 + record2 === 2020) != undefined
-    ) ?? -1;
-  return record1 * (2020 - record1);
+  const memo: Record<number, boolean> = {};
+  let returnValue = -1;
+  input.forEach((record) => {
+    if (returnValue < 0 && record <= 2020) {
+      memo[record] = true;
+      const remaining = 2020 - record;
+      if (memo[remaining]) {
+        returnValue = remaining * record;
+      }
+      memo[remaining] = true;
+    }
+  });
+  return returnValue;
 };
 
 export const part2 = (input: number[]): number => {
-  let i = -1,
-    j = -1,
-    k = -1;
+  const memo: Record<number, boolean> = {};
+  let returnValue = -1;
   input.forEach((record1, i1) => {
-    if (record1 <= 2020) {
-      input.forEach((record2, i2) => {
-        if (record1 + record2 <= 2020) {
-          input.forEach((record3, i3) => {
-            if (record1 + record2 + record3 === 2020) {
-              i = i1;
-              j = i2;
-              k = i3;
-            }
-          });
+    if (returnValue < 0 && record1 <= 2020) {
+      memo[record1] = true;
+      input.slice(i1 + 1).forEach((record2) => {
+        const remaining = 2020 - (record1 + record2);
+        if (remaining > 0) {
+          if (memo[remaining] != undefined) {
+            returnValue = remaining * record1 * record2;
+          }
+          memo[remaining] = true;
         }
       });
     }
   });
-  return i === -1 ? -1 : input[i] * input[j] * input[k];
+  return returnValue;
 };
 
 const input = inputAsNumArray('src/day1/input.txt', '\n');
