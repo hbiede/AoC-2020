@@ -15,14 +15,16 @@
 
 #### Leaderboard appearances:
 
-* 
+* Didn't get on the leaderboard proper, but I did manage to get 303rd on day 3-1,
+  so I was pretty excited about that!
 
 ## Stats
 | Day | Part 1 Time (Rank) (Score) | Part 2 Time (Rank) (Score) |
 |----:|----------------------------|----------------------------|
 |   1 | 00:14:05 ( 2536) (  0)     | 00:17:41 ( 2486) (  0)     |
 |   2 | 00:18:49 ( 4170) (  0)     | 00:30:15 ( 4542) (  0)     |
-| Avg | 00:16:27 ( 3353) (  0)     | 00:23:58 ( 3514) (  0)     |
+|   3 | 00:03:39 (  303) (  0)     | 00:15:04 ( 2060) (  0)     |
+| Avg | 00:12:11 ( 2336) (  0)     | 00:21:00 ( 3029) (  0)     |
 
 
 <img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400>

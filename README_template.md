@@ -15,7 +15,8 @@
 
 #### Leaderboard appearances:
 
-* 
+* Didn't get on the leaderboard proper, but I did manage to get 303rd on day 3-1,
+  so I was pretty excited about that!
 
 ## Stats
 STATS_TABLE
