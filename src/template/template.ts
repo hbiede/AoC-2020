@@ -9,4 +9,6 @@ export const part2 = (input: string): number => {
 };
 
 const input = inputAsText('src/day!DAY!/input.txt');
-console.log(`Part 1:  ${part1(input)}\nPart 2:  ${part2(input)}`);
+console.log(
+  `Day !DAY!:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+);

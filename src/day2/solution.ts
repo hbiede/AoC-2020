@@ -56,4 +56,4 @@ export const part2 = (input: string[]): number => {
 };
 
 const input = inputAsText('src/day2/input.txt').split('\n');
-console.log(`Part 1:  ${part1(input)}\nPart 2:  ${part2(input)}`);
+console.log(`Day 2:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
