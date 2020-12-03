@@ -1,4 +1,4 @@
-import { inputAsText } from '../utils/InputProcessor';
+import { inputAsStringArray } from '../utils/InputProcessor';
 
 const treeCount = (input: string[], right: number, down: number) => {
   let treeCount = 0;
@@ -23,5 +23,5 @@ export const part2 = (input: string[]): number => {
   );
 };
 
-const input = inputAsText('src/day3/input.txt').split('\n');
+const input = inputAsStringArray('src/day3/input.txt');
 console.log(`Day 3:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);

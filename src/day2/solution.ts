@@ -1,4 +1,4 @@
-import { inputAsText } from '../utils/InputProcessor';
+import { inputAsStringArray } from '../utils/InputProcessor';
 
 type Count = {
   low: number;
@@ -55,5 +55,5 @@ export const part2 = (input: string[]): number => {
   return validCounter(input, passwordIsValid);
 };
 
-const input = inputAsText('src/day2/input.txt').split('\n');
+const input = inputAsStringArray('src/day2/input.txt');
 console.log(`Day 2:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);

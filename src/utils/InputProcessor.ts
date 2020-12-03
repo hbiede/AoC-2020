@@ -4,12 +4,12 @@ export const inputAsText = (file: string): string => {
   return fs.readFileSync(file, 'utf8');
 };
 
+export const inputAsStringArray = (file: string, delimiter = '\n'): string[] =>
+  inputAsText(file).split(delimiter);
+
 export const inputAsNumArray = (
   file: string,
-  delimiter: string,
+  delimiter = '\n',
   base = 10
-): number[] => {
-  return inputAsText(file)
-    .split(delimiter)
-    .map((num) => Number.parseInt(num, base));
-};
+): number[] =>
+  inputAsStringArray(file, delimiter).map((num) => Number.parseInt(num, base));
