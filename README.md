@@ -1,7 +1,9 @@
 # AoC-2019
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
+This year, I have self-imposed a rule that I will unit test every day's submission, and, unless I am completely unable
+to do so, have every solution able to solve both parts in under a second on my 2017 MacBook Pro (15") 
 
-![<ORG_NAME>](https://circleci.com/gh/hbiede/AoC-2020.svg?style=svg)
+![HBiede](https://circleci.com/gh/hbiede/AoC-2020.svg?style=svg)
 
 ## Highlights:
 
