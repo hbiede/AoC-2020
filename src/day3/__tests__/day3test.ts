@@ -340,7 +340,7 @@ const exampleInput = [
   '.#..#...#.#',
 ];
 
-describe('day 2', () => {
+describe('day 3', () => {
   it('should solve part 1 with example input', () => {
     expect(part1(exampleInput)).toBe(7);
   });
