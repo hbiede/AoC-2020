@@ -25,7 +25,7 @@ cat /tmp/challenge02.md | recode html..ascii > /tmp/challenge03.md
 cat /tmp/challenge03.md | sed 's/ \././g' > /tmp/challenge04.md
 
 # Add newlines between sentences and headers, and skip the first line.
-cat /tmp/challenge04.md | sed 's/--- Day/~~## Day/g' | sed 's/--- Part/~~## Part/g' | sed 's/ ---/~~/g' | sed -E 's/(\.) ([A-Z])/\1~~\2/g' | tr '~' '\n' | tail -n +3 > src/day${1}/README.md
+cat /tmp/challenge04.md | sed 's/--- Day/~~## Day/g' | sed 's/--- Part/~~## Part/g' | sed 's/ ---/~~/g'  | sed 's/` ,/`,/g' | sed 's/` ./`./g' | sed -E 's/(\.) ([A-Z])/\1~~\2/g' | tr '~' '\n' | tail -n +3 > src/day${1}/README.md
 
 # Delete HTML
 rm src/day${1}/challenge.html
