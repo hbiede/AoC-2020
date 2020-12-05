@@ -27,7 +27,8 @@ to do so, have every solution able to solve both parts in under a second on my 2
 |   2 | 00:18:49 ( 4170) (  0)     | 00:30:15 ( 4542) (  0)     |
 |   3 | 00:03:39 (  303) (  0)     | 00:15:04 ( 2060) (  0)     |
 |   4 | 00:09:02 ( 1154) (  0)     | 00:49:01 ( 3205) (  0)     |
-| Avg | 00:11:23 ( 2040) (  0)     | 00:28:00 ( 3073) (  0)     |
+|   5 | 00:14:47 ( 2420) (  0)     | 00:29:02 ( 3673) (  0)     |
+| Avg | 00:12:04 ( 2116) (  0)     | 00:28:12 ( 3193) (  0)     |
 
 
 <img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400>
@@ -40,7 +41,6 @@ Note: Times are from time of challenge release, not start time to completion tim
 * Automatically downloads the challenge and input for the day (e.g.: `make download DAY=03`)
   * In order to use this target, you need to specify your session cookie from [adventofcode.com](https://adventofcode.com) in cookies.txt through the usage of `make cookie SESSION={Insert your session cookie here}`.
   * Parses the challenge into a markdown file (adds Markdown style headers and code blocks).
-  * Per Ullaakut, this part still needs a bit of work, as multiline code blocks are not supported yet, and formatting (bold, italics etc.) is lost.
 * Setup the new day's source file from a template file while downloading the input and challenge per above (e.g.: `make DAY=03`)
 * Create the stats table above by calling `make stats`
   * May require calling `pip3 install -r requirements.txt` to ensure you have all the necessary python dependencies

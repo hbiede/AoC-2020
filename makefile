@@ -34,7 +34,6 @@ src/day${DAY}/input.txt:
 	@echo "${H}=== Downloading input for day ${SHORT_DAY} ===${X}"
 	@curl -s -b "session=${SESSION}" https://adventofcode.com/${YEAR}/day/${SHORT_DAY}/input > src/day${DAY}/input.txt
 
-read: src/day${DAY}/README.md
 src/day${DAY}/README.md: src/day${DAY}/challenge.html
 	@echo "${H}=== Parsing input ===${X}"
 	@./scripts/parse_challenge.sh ${DAY}
