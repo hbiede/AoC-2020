@@ -58,4 +58,8 @@ setup:
 ## call `make cookie SESSION=${}`
 cookie:
 	@echo ${SESSION} > ${COOKIE_FILE}
+
+## Print help for the make forumlae
+help:
+	@sh scripts/help.sh makefile
 	
