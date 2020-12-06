@@ -11,7 +11,7 @@ cat src/day${1}/challenge.html | tr '\n' '\f' | perl -pe 's/.*?(<article.*<\/art
 html2md -i src/day${1}/challenge1.html -o /tmp/challenge00.md
 
 # Format
-cat /tmp/challenge00.md | sed 's/ \././g' | sed 's/` ,/`,/g' | sed 's/` \./`./g' > src/day${1}/README.md
+cat /tmp/challenge00.md | sed 's/ \././g' | sed 's/` ,/`,/g' | sed 's/` \./`./g' | sed 's/^Your puzzle answer.*$//g' > src/day${1}/README.md
 
 # Delete HTML
 rm src/day${1}/challeng*.html

@@ -41,7 +41,7 @@ Here are some other boarding passes:
 
 As a sanity check, look through your list of boarding passes. _What is the highest seat ID on a boarding pass?_
 
-Your puzzle answer was `951`.
+
 
 \--- Part Two ---
 -----------------
