@@ -29,7 +29,8 @@ to do so, have every solution able to solve both parts in under a second on my 2
 |   4 | 00:09:02 ( 1154) (  0)     | 00:49:01 ( 3205) (  0)     |
 |   5 | 00:14:47 ( 2420) (  0)     | 00:29:02 ( 3673) (  0)     |
 |   6 | 00:09:56 ( 3666) (  0)     | 00:20:03 ( 3681) (  0)     |
-| Avg | 00:11:43 ( 2374) (  0)     | 00:26:51 ( 3274) (  0)     |
+|   7 | 01:02:42 ( 5573) (  0)     | 01:15:43 ( 4248) (  0)     |
+| Avg | 00:19:00 ( 2831) (  0)     | 00:33:49 ( 3413) (  0)     |
 
 
 <img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400>
