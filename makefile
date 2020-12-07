@@ -1,6 +1,7 @@
 # Setup
-# Removes leading zero from given day
 FILE_EXTENSION := ts
+
+# Removes leading zero from given day
 SHORT_DAY := $(shell echo ${DAY} | awk 'sub(/^0*/, "", $$1)')
 COOKIE_FILE := cookies.txt
 SESSION ?= ${shell cat ${COOKIE_FILE}}
