@@ -16,11 +16,10 @@ export const part1 = (input: string[]): number => {
 
 const countAllYeses = (group: string, groupSize: number): number => {
   const groupAnswers = group.split('');
-  return [...new Set(groupAnswers)]
-    .map(
-      (question) => groupAnswers.filter((letter) => letter === question).length
-    )
-    .filter((questionCount) => questionCount === groupSize).length;
+  return [...new Set(groupAnswers)].filter(
+    (question) =>
+      groupAnswers.filter((letter) => letter === question).length === groupSize
+  ).length;
 };
 
 export const part2 = (input: string[]): number => {
