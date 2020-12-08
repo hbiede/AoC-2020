@@ -19,6 +19,7 @@ to do so, have every solution able to solve both parts in under a second on my 2
 
 * Didn't get on the leaderboard proper, but I did manage to get 303rd on day 3-1,
   so I was pretty excited about that!
+* I got two triple digit showings on the 8th day!
 
 ## Stats
 STATS_TABLE

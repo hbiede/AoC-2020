@@ -12,15 +12,15 @@ H=$(shell tput -Txterm setaf 3; tput bold)
 B=$(shell tput bold; tput smul)
 X=$(shell tput sgr0)
 
-## Alias for setupDay
+## Alias for setupDay (used to call `make DAY=X`)
 default: setupDay
 
 ## Downloads necessary files and clones the template file (e.g. make DAY=02)
 setupDay: src/day${DAY}/solution.${FILE_EXTENSION} download
 
 ## Call to run your code
-run: src/day${DAY}/solution.ts
-	ts-node src/day${DAY}/solution.ts
+run: src/day${DAY}/solution.${FILE_EXTENSION}
+	ts-node src/day${DAY}/solution.${FILE_EXTENSION}
 
 ## Downloads the instructions and inputs for a day
 download: src/day${DAY}/README.md src/day${DAY}/input.txt
@@ -56,7 +56,7 @@ setup:
 	@mkdir -p src/template
 	@echo "${H}=== Create a template file and adjust the indicated recipe ===${X}"
 
-## call `make cookie SESSION=${}`
+## Call `make cookie SESSION=${}` to set the cookie used to download your input text
 cookie:
 	@echo ${SESSION} > ${COOKIE_FILE}
 
