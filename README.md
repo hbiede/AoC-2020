@@ -32,11 +32,13 @@ to do so, have every solution able to solve both parts in under a second on my 2
 |   6 | 00:09:56 ( 3666) (  0)     | 00:20:03 ( 3681) (  0)     |
 |   7 | 01:02:42 ( 5573) (  0)     | 01:15:43 ( 4248) (  0)     |
 |   8 | 00:05:42 (  629) (  0)     | 00:13:18 (  636) (  0)     |
-| Avg | 00:17:20 ( 2556) (  0)     | 00:31:15 ( 3066) (  0)     |
+|   9 | 00:26:22 ( 6287) (  0)     | 00:39:45 ( 5533) (  0)     |
+| Avg | 00:18:20 ( 2970) (  0)     | 00:32:12 ( 3340) (  0)     |
 
 
-<img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400>
-<img alt="Part 2 Time Stats" src="statsImages/part2time.png" width=400> <img alt="Part 2 Rank" src="statsImages/part2rank.png" width=400>
+<!--suppress CheckImageSize -->
+<img alt="Part 1 Rank" src="statsImages/part1rank.png" width=400> <img alt="Part 2 Rank" src="statsImages/part2rank.png" width=400>
+<img alt="Part 1 Time Stats" src="statsImages/part1time.png" width=400> <img alt="Part 2 Time Stats" src="statsImages/part2time.png" width=400>
 
 Note: Times are from time of challenge release, not start time to completion time
 
