@@ -203,6 +203,7 @@ def _get_stat_column(results: Dict[Tuple[Union[int, Any], int], Dict], column: s
             col_a[entry[1]] = results[entry]['a'][column]
         if 'b' in results[entry].keys():
             col_b[entry[1]] = results[entry]['b'][column]
+    max_day_finished += 1
 
     for i in range(1, max_day_finished):
         if not (i in col_a):
