@@ -12,4 +12,6 @@ export const inputAsNumArray = (
   delimiter = '\n',
   base = 10
 ): number[] =>
-  inputAsStringArray(file, delimiter).map((num) => Number.parseInt(num, base));
+  inputAsStringArray(file, delimiter)
+    .filter((line) => line.length > 0)
+    .map((num) => Number.parseInt(num, base));
