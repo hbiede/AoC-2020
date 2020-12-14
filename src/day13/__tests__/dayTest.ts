@@ -11,6 +11,7 @@ const inputExample3 = '\n67,7,59,61';
 const inputExample4 = '\n67,x,7,59,61';
 const inputExample5 = '\n67,7,x,59,61';
 const inputExample6 = '\n1789,37,47,1889';
+const inputTrivial = '\n0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,x,21';
 
 describe('day 13', () => {
   it('should solve part 1 with example input', () => {
@@ -26,6 +27,7 @@ describe('day 13', () => {
     expect(part2(inputExample4)).toBe(779210);
     expect(part2(inputExample5)).toBe(1261476);
     expect(part2(inputExample6)).toBe(1202161486);
+    expect(part2(inputTrivial)).toBe(0);
   });
   it('should solve part 2 with my assigned input', () => {
     expect(part2(input, 100000000000000)).toBe(408270049879073);
