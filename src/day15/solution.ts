@@ -2,12 +2,13 @@ import { inputAsNumArray } from '../utils/InputProcessor';
 
 const findMemAt = (input: number[], at: number): number => {
   let lastNum = input[input.length - 1];
-  const lastSpoken = new Array(at);
-  input.forEach((val, i) => (lastSpoken[val] = i + 1));
+  // Pre-allocated arrays are faster than maps at scale
+  const lastSeen = new Array(at);
+  input.forEach((val, i) => (lastSeen[val] = i + 1));
 
   for (let i = input.length; i < at; i++) {
-    const newNum = lastSpoken[lastNum] ? i - lastSpoken[lastNum] : 0;
-    lastSpoken[lastNum] = i;
+    const newNum = lastSeen[lastNum] ? i - lastSeen[lastNum] : 0;
+    lastSeen[lastNum] = i;
     lastNum = newNum;
   }
   return lastNum;
