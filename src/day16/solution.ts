@@ -21,29 +21,22 @@ type Rule = {
   ranges: Range[];
 };
 
-const ruleRegex = /([\w\s]+): (\d+)-(\d+) or (\d+)-(\d+)/;
+// Parser
 const genRules = (rulesText: string[]): Rule[] =>
   rulesText
     .map((rule) => {
-      const splitRule = ruleRegex.exec(rule);
-      if (splitRule && splitRule.length === 6) {
-        return {
-          name: splitRule[1],
-          ranges: [
-            {
-              low: Number.parseInt(splitRule[2], 10),
-              high: Number.parseInt(splitRule[3], 10),
-            },
-            {
-              low: Number.parseInt(splitRule[4], 10),
-              high: Number.parseInt(splitRule[5], 10),
-            },
-          ],
-        };
-      }
+      const [name, rangesText] = rule.split(': ');
       return {
-        name: 'invalid',
-        ranges: [],
+        name,
+        ranges: rangesText.split(' or ').map((rangeText) => {
+          const [low, high] = rangeText
+            .split('-')
+            .map((val) => Number.parseInt(val, 10));
+          return {
+            low,
+            high,
+          };
+        }),
       };
     })
     .filter((rule) => rule.ranges.length > 0);
@@ -105,23 +98,6 @@ const findFieldAssociations = (
   return myFields as Field[];
 };
 
-export const part1 = (input: string[]): number => {
-  const startOfYourTicket = input.findIndex((line) =>
-    line.startsWith('your ticket')
-  );
-  const rules = genRules(input.slice(0, startOfYourTicket - 1));
-
-  return input
-    .slice(startOfYourTicket + 4)
-    .map((ticket) =>
-      getInvalidField(
-        ticket.split(',').map((field) => Number.parseInt(field, 10)),
-        rules
-      )
-    )
-    .reduce((acc, field) => acc + (field === -1 ? 0 : field), 0);
-};
-
 const getFields = (input: string[]): Field[] => {
   const startOfYourTicket = input.findIndex((line) =>
     line.startsWith('your ticket')
@@ -138,6 +114,23 @@ const getFields = (input: string[]): Field[] => {
     .filter((ticket) => getInvalidField(ticket, rules) === -1);
 
   return findFieldAssociations(yourTicket, validTickets, rules);
+};
+
+export const part1 = (input: string[]): number => {
+  const startOfYourTicket = input.findIndex((line) =>
+    line.startsWith('your ticket')
+  );
+  const rules = genRules(input.slice(0, startOfYourTicket - 1));
+
+  return input
+    .slice(startOfYourTicket + 4)
+    .map((ticket) =>
+      getInvalidField(
+        ticket.split(',').map((field) => Number.parseInt(field, 10)),
+        rules
+      )
+    )
+    .reduce((acc, field) => acc + (field === -1 ? 0 : field), 0);
 };
 
 export const part2 = (input: string[], regex = /^depart/): number =>
