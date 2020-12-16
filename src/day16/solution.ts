@@ -6,7 +6,7 @@ export type Field = {
   name: string;
 };
 
-export type UncertainField = Omit<Field, 'name'> & {
+export type FieldPossibilities = Omit<Field, 'name'> & {
   possibleFieldNames: string[];
   name?: string;
 };
@@ -41,6 +41,7 @@ const genRules = (rulesText: string[]): Rule[] =>
     })
     .filter((rule) => rule.ranges.length > 0);
 
+// Part 1 helpers
 const getInvalidFieldIndex = (
   ticket: number[],
   rules: Rule[]
@@ -61,44 +62,58 @@ const getInvalidFieldIndex = (
 const getInvalidField = (ticket: number[], rules: Rule[]): number =>
   getInvalidFieldIndex(ticket, rules).val;
 
+// Part 2 helpers
 const findFieldAssociations = (
   ticket: number[],
   otherTickets: number[][],
   rules: Rule[]
 ): Field[] => {
-  const myFields = ticket.map((value, index) => {
-    const otherTicketsFields = otherTickets.map((ticket) => ticket[index]);
-    const possibleFieldNames = rules
-      .filter(({ ranges }) =>
-        otherTicketsFields.every((field) =>
-          ranges.some((range) => range.low <= field && field <= range.high)
-        )
-      )
-      .map(({ name }) => name);
-    return { index, value, possibleFieldNames } as UncertainField;
-  });
+  // Create Field Possibilities
+  const yourTicketFields = ticket.map(
+    (value, index) =>
+      ({
+        index,
+        value,
+        possibleFieldNames: rules
+          .filter(({ ranges }) =>
+            otherTickets
+              .map((ticket) => ticket[index])
+              .every((field) =>
+                ranges.some(
+                  (range) => range.low <= field && field <= range.high
+                )
+              )
+          )
+          .map(({ name }) => name),
+      } as FieldPossibilities)
+  );
 
   const certainFields = new Set<string>();
-  while (myFields.some((field) => field.possibleFieldNames.length)) {
-    for (const myField of myFields.filter(
+  while (
+    yourTicketFields.some((field) => field.possibleFieldNames.length > 0)
+  ) {
+    for (const yourField of yourTicketFields.filter(
       (field) => field.possibleFieldNames.length === 1
     )) {
-      myField.name = myField.possibleFieldNames[0];
-      certainFields.add(myField.name);
+      // Only one option left? Sounds like we found the right field/rule pairing
+      yourField.name = yourField.possibleFieldNames[0];
+      // Track what has been used
+      certainFields.add(yourField.name);
     }
 
-    // And take out from other field name considerations
-    for (const field of myFields) {
+    // Reduce options for remaining fields based on new pairings
+    for (const field of yourTicketFields) {
       field.possibleFieldNames = field.possibleFieldNames.filter(
         (possibleFieldName) => !certainFields.has(possibleFieldName)
       );
     }
   }
 
-  return myFields as Field[];
+  return yourTicketFields as Field[];
 };
 
 const getFields = (input: string[]): Field[] => {
+  // Data setup
   const startOfYourTicket = input.findIndex((line) =>
     line.startsWith('your ticket')
   );
@@ -113,9 +128,11 @@ const getFields = (input: string[]): Field[] => {
     )
     .filter((ticket) => getInvalidField(ticket, rules) === -1);
 
+  // Parsing
   return findFieldAssociations(yourTicket, validTickets, rules);
 };
 
+// Part runners
 export const part1 = (input: string[]): number => {
   const startOfYourTicket = input.findIndex((line) =>
     line.startsWith('your ticket')
@@ -138,6 +155,7 @@ export const part2 = (input: string[], regex = /^depart/): number =>
     .filter(({ name }) => regex.test(name))
     .reduce((acc, { value }) => acc * value, 1);
 
+// Main
 if (require.main === module) {
   (() => {
     const input = inputAsStringArray('src/day16/input.txt');
