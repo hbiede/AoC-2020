@@ -45,8 +45,6 @@ Consider the validity of the _nearby tickets_ you scanned. _What is your ticket 
 
 
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
 \--- Part Two ---
 -----------------
 
