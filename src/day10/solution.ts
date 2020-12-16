@@ -35,6 +35,12 @@ export const part2 = (input: number[]): number => {
   return joltLengths[max + 3];
 };
 
-const input = inputAsNumArray('src/day10/input.txt');
+if (require.main === module) {
+  (() => {
+    const input = inputAsNumArray('src/day10/input.txt');
 
-console.log(`Day 10:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+    console.log(
+      `Day 10:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

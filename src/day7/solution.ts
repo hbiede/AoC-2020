@@ -80,5 +80,11 @@ export const part2 = (input: string[]): number => {
   return quantityInside('shiny gold');
 };
 
-const input = inputAsStringArray('src/day7/input.txt');
-console.log(`Day 7:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsStringArray('src/day7/input.txt');
+    console.log(
+      `Day 7:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

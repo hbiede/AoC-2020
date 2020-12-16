@@ -91,7 +91,13 @@ export const part2 = (input: string[]): number => {
   return Math.abs(x) + Math.abs(y);
 };
 
-const input = inputAsStringArray('src/day12/input.txt').filter(
-  (line) => line.length > 0
-);
-console.log(`Day 12:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsStringArray('src/day12/input.txt').filter(
+      (line) => line.length > 0
+    );
+    console.log(
+      `Day 12:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

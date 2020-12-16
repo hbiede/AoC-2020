@@ -63,30 +63,6 @@ const getInvalidFieldIndex = (
   return { index: -1, val: -1 };
 };
 
-const invalidateRules = (tickets: number[][], rules: Rule[]) =>
-  rules.map((rule) => {
-    const newRule = { ...rule };
-    const { firstLow, firstHigh, secondLow, secondHigh } = newRule;
-    tickets.forEach((ticket) => {
-      for (let fieldIndex = 0; fieldIndex < ticket.length; fieldIndex++) {
-        if (newRule.indices.includes(fieldIndex)) {
-          const field = ticket[fieldIndex];
-          if (
-            !(firstLow <= field && field <= firstHigh) &&
-            !(secondLow <= field && field <= secondHigh)
-          ) {
-            console.log(fieldIndex);
-            console.log(ticket);
-            newRule.indices = newRule.indices.filter(
-              (val) => val !== fieldIndex
-            );
-          }
-        }
-      }
-    });
-    return newRule;
-  });
-
 const getInvalidField = (ticket: string, rules: Rule[]): number =>
   getInvalidFieldIndex(ticket, rules).val;
 
@@ -108,5 +84,11 @@ export const part2 = (input: string[]): number => {
   return input.length;
 };
 
-const input = inputAsStringArray('src/day16/input.txt');
-console.log(`Day 16:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsStringArray('src/day16/input.txt');
+    console.log(
+      `Day 16:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

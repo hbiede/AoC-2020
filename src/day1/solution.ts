@@ -36,5 +36,11 @@ export const part2 = (input: number[]): number => {
   return returnValue;
 };
 
-const input = inputAsNumArray('src/day1/input.txt', '\n');
-console.log(`Day 1:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsNumArray('src/day1/input.txt', '\n');
+    console.log(
+      `Day 1:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

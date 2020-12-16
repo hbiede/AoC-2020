@@ -36,8 +36,12 @@ export const part2 = (input: number[]): number => {
   return input.length;
 };
 
-const input = inputAsStringArray('src/day5/input.txt');
-const seatIDs = getSeatIDs(input);
-console.log(
-  `Day 5:\n  Part 1:  ${part1(seatIDs)}\n  Part 2:  ${part2(seatIDs)}`
-);
+if (require.main === module) {
+  (() => {
+    const input = inputAsStringArray('src/day5/input.txt');
+    const seatIDs = getSeatIDs(input);
+    console.log(
+      `Day 5:\n  Part 1:  ${part1(seatIDs)}\n  Part 2:  ${part2(seatIDs)}`
+    );
+  })();
+}

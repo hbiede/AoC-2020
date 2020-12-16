@@ -30,5 +30,11 @@ export const part2 = (input: string, startSearchAt = 0): number => {
   return t;
 };
 
-const input = inputAsText('src/day13/input.txt');
-console.log(`Day 13:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsText('src/day13/input.txt');
+    console.log(
+      `Day 13:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

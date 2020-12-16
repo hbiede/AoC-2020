@@ -25,8 +25,15 @@ export const part2 = (input: number[], firstInvalid: number): number => {
   return -1;
 };
 
-const input = inputAsNumArray('src/day9/input.txt');
-const firstInvalid = part1(input);
-console.log(
-  `Day 9:\n  Part 1:  ${firstInvalid}\n  Part 2:  ${part2(input, firstInvalid)}`
-);
+if (require.main === module) {
+  (() => {
+    const input = inputAsNumArray('src/day9/input.txt');
+    const firstInvalid = part1(input);
+    console.log(
+      `Day 9:\n  Part 1:  ${firstInvalid}\n  Part 2:  ${part2(
+        input,
+        firstInvalid
+      )}`
+    );
+  })();
+}

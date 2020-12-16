@@ -18,5 +18,11 @@ export const part1 = (input: number[]): number => findMemAt(input, 2020);
 
 export const part2 = (input: number[]): number => findMemAt(input, 30000000);
 
-const input = inputAsNumArray('src/day15/input.txt', ',');
-console.log(`Day 15:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsNumArray('src/day15/input.txt', ',');
+    console.log(
+      `Day 15:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}

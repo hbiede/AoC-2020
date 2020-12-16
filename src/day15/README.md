@@ -42,8 +42,6 @@ Given your starting numbers, _what will be the `2020`th number spoken?_
 
 
 
-The first half of this puzzle is complete! It provides one gold star: \*
-
 \--- Part Two ---
 -----------------
 

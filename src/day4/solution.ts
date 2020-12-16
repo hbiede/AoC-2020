@@ -68,5 +68,11 @@ export const part1 = (input: string[]): number => validCounter(input, false);
 
 export const part2 = (input: string[]): number => validCounter(input, true);
 
-const input = inputAsStringArray('src/day4/input.txt');
-console.log(`Day 4:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`);
+if (require.main === module) {
+  (() => {
+    const input = inputAsStringArray('src/day4/input.txt');
+    console.log(
+      `Day 4:\n  Part 1:  ${part1(input)}\n  Part 2:  ${part2(input)}`
+    );
+  })();
+}
