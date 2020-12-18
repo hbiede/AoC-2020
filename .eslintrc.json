@@ -53,8 +53,6 @@
         "ignoreRestSiblings": true
       }
     ],
-    "flowtype/space-after-type-colon": "off",
-    "flowtype/no-types-missing-file-annotation": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/no-empty-function": "off"

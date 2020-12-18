@@ -1,7 +1,8 @@
 # AoC-2019
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
-This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely unable
-to do so, have every solution able to solve both parts in under a second on my 2017 MacBook Pro (15") (Failed on Day 17...)
+This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
+unable to do so, have every solution able to solve both parts in under a second on my 2017 MacBook Pro (15") (I failed
+at this requirement on Day 17...).
 
 ![HBiede](https://circleci.com/gh/hbiede/AoC-2020.svg?style=svg)
 
@@ -41,7 +42,8 @@ to do so, have every solution able to solve both parts in under a second on my 2
 |  15 | 00:31:30 ( 3604) (  0)     | 01:27:36 ( 5329) (  0)     |
 |  16 | 00:20:39 ( 2106) (  0)     | 02:34:58 ( 5057) (  0)     |
 |  17 | 00:39:17 ( 1636) (  0)     | 01:02:40 ( 2238) (  0)     |
-| Avg | 00:23:49 ( 3126) (  0)     | 00:58:36 ( 3493) (  0)     |
+|  18 | 00:48:43 ( 2650) (  0)     | 01:12:31 ( 2315) (  0)     |
+| Avg | 00:25:12 ( 3099) (  0)     | 00:59:23 ( 3428) (  0)     |
 
 
 <!--suppress CheckImageSize -->
