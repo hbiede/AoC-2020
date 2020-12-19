@@ -10,7 +10,7 @@ at this requirement on Day 17...).
 
 #### Favorite problems:
 
-* 
+* Love regex, so I was glad how much it featured this year, especially in Day 19. 
 
 #### Interesting approaches:
 
@@ -43,7 +43,8 @@ at this requirement on Day 17...).
 |  16 | 00:20:39 ( 2106) (  0)     | 02:34:58 ( 5057) (  0)     |
 |  17 | 00:39:17 ( 1636) (  0)     | 01:02:40 ( 2238) (  0)     |
 |  18 | 00:48:43 ( 2650) (  0)     | 01:12:31 ( 2315) (  0)     |
-| Avg | 00:25:12 ( 3099) (  0)     | 00:59:23 ( 3428) (  0)     |
+|  19 | 00:54:13 ( 1579) (  0)     | 01:27:10 ( 1170) (  0)     |
+| Avg | 00:26:43 ( 3019) (  0)     | 01:00:50 ( 3309) (  0)     |
 
 
 <!--suppress CheckImageSize -->

@@ -10,7 +10,7 @@ at this requirement on Day 17...).
 
 #### Favorite problems:
 
-* 
+* Love regex, so I was glad how much it featured this year, especially in Day 19. 
 
 #### Interesting approaches:
 
