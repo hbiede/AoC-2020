@@ -2,7 +2,9 @@
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
 This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
 unable to do so, have every solution able to solve both parts in under a second on my 2017 MacBook Pro (15") (I failed
-at this requirement on Day 17...).
+at this requirement on Day 17...). 
+
+I took a day off on day 20, but I went back and did it by hand the next day for a logic puzzle.
 
 ![HBiede](https://circleci.com/gh/hbiede/AoC-2020.svg?style=svg)
 
@@ -44,7 +46,9 @@ at this requirement on Day 17...).
 |  17 | 00:39:17 ( 1636) (  0)     | 01:02:40 ( 2238) (  0)     |
 |  18 | 00:48:43 ( 2650) (  0)     | 01:12:31 ( 2315) (  0)     |
 |  19 | 00:54:13 ( 1579) (  0)     | 01:27:10 ( 1170) (  0)     |
-| Avg | 00:26:43 ( 3019) (  0)     | 01:00:50 ( 3309) (  0)     |
+|  20 | 13:35:48 ( 9433) (  0)     | 13:35:59 ( 4008) (  0)     |
+|  21 | 00:47:49 ( 1942) (  0)     | 01:09:28 ( 2166) (  0)     |
+| Avg | 01:05:18 ( 3273) (  0)     | 01:37:12 ( 3288) (  0)     |
 
 
 <!--suppress CheckImageSize -->
