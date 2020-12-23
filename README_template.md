@@ -2,7 +2,7 @@
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
 This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
 unable to do so, have every solution able to solve both parts in under the 15-second mark they suggest, on my 2017
-MacBook Pro (15"). 
+MacBook Pro (15") (Failed on day 23-2 for this requirement).
 
 I took a day off on day 20, but I went back and did it by hand the next day for a logic puzzle.
 

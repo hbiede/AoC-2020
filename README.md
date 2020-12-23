@@ -2,7 +2,7 @@
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
 This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
 unable to do so, have every solution able to solve both parts in under the 15-second mark they suggest, on my 2017
-MacBook Pro (15"). 
+MacBook Pro (15") (Failed on day 23-2 for this requirement).
 
 I took a day off on day 20, but I went back and did it by hand the next day for a logic puzzle.
 
@@ -49,7 +49,8 @@ I took a day off on day 20, but I went back and did it by hand the next day for 
 |  20 | 13:35:48 ( 9433) (  0)     | 13:35:59 ( 4008) (  0)     |
 |  21 | 00:47:49 ( 1942) (  0)     | 01:09:28 ( 2166) (  0)     |
 |  22 | 00:09:23 (  975) (  0)     | 00:40:53 (  899) (  0)     |
-| Avg | 01:02:46 ( 3169) (  0)     | 01:34:39 ( 3179) (  0)     |
+|  23 | 01:01:21 ( 2537) (  0)     | 01:17:52 (  743) (  0)     |
+| Avg | 01:02:42 ( 3141) (  0)     | 01:33:55 ( 3073) (  0)     |
 
 
 <!--suppress CheckImageSize -->
