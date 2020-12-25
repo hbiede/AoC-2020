@@ -1,6 +1,6 @@
 # AoC-2019
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
-This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
+This year, I self-imposed a rule that I would unit test every day's submission, and, unless I was completely
 unable to do so, have every solution able to solve both parts in under the 15-second mark they suggest, on my 2017
 MacBook Pro (15") (Failed on day 23-2 for this requirement).
 
@@ -12,17 +12,14 @@ I took a day off on day 20, but I went back and did it by hand the next day for 
 
 #### Favorite problems:
 
-* Love regex, so I was glad how much it featured this year, especially in Day 19. 
-
-#### Interesting approaches:
-
-* 
+* Love regex, so I was glad how much it featured this year, especially in Day 19.
 
 #### Leaderboard appearances:
 
 * Didn't get on the leaderboard proper, but I did manage to get 303rd on day 3-1,
   so I was pretty excited about that!
 * I got two triple digit showings on the 8th day!
+* Overall much better showing that in [2019](https://github.com/hbiede/AoC-2019).
 
 ## Stats
 | Day | Part 1 Time (Rank) (Score) | Part 2 Time (Rank) (Score) |
@@ -51,7 +48,8 @@ I took a day off on day 20, but I went back and did it by hand the next day for 
 |  22 | 00:09:23 (  975) (  0)     | 00:40:53 (  899) (  0)     |
 |  23 | 01:01:21 ( 2537) (  0)     | 01:17:52 (  743) (  0)     |
 |  24🎅 | 13:55:02 (10674) (  0)     | 14:22:20 ( 9486) (  0)     |
-| Avg | 01:34:53 ( 3455) (  0)     | 02:05:56 ( 3340) (  0)     |
+|  25🎄 | 00:20:06 ( 1467) (  0)     | 00:20:40 ( 1257) (  0)     |
+| Avg | 01:31:53 ( 3376) (  0)     | 02:01:43 ( 3257) (  0)     |
 
 
 <!--suppress CheckImageSize -->

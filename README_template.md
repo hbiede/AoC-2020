@@ -1,6 +1,6 @@
 # AoC-2019
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
-This year, I have self-imposed a rule that I will be unit testing every day's submission, and, unless I am completely
+This year, I self-imposed a rule that I would unit test every day's submission, and, unless I was completely
 unable to do so, have every solution able to solve both parts in under the 15-second mark they suggest, on my 2017
 MacBook Pro (15") (Failed on day 23-2 for this requirement).
 
@@ -12,17 +12,14 @@ I took a day off on day 20, but I went back and did it by hand the next day for 
 
 #### Favorite problems:
 
-* Love regex, so I was glad how much it featured this year, especially in Day 19. 
-
-#### Interesting approaches:
-
-* 
+* Love regex, so I was glad how much it featured this year, especially in Day 19.
 
 #### Leaderboard appearances:
 
 * Didn't get on the leaderboard proper, but I did manage to get 303rd on day 3-1,
   so I was pretty excited about that!
 * I got two triple digit showings on the 8th day!
+* Overall much better showing that in [2019](https://github.com/hbiede/AoC-2019).
 
 ## Stats
 STATS_TABLE
