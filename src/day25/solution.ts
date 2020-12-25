@@ -26,17 +26,11 @@ export const part1 = (
   return value;
 };
 
-export const part2 = (input: string[]): number => {
-  return input.length;
-};
-
 if (require.main === module) {
   (() => {
     const [card, door] = inputAsStringArray('src/day25/input.txt').map((line) =>
       Number.parseInt(line, 10)
     );
-    console.log(
-      `Day 25:\n  Part 1:  ${part1(card, door)}\n  Part 2:  ${part2([''])}`
-    );
+    console.log(`Day 25:\n  Part 1:  ${part1(card, door)}\nThat's it!!`);
   })();
 }
