@@ -1,4 +1,4 @@
-# AoC-2019
+# AoC-2020
 [Advent of Code](https://adventofcode.com) Solutions for 2020 in TypeScript.
 This year, I self-imposed a rule that I would unit test every day's submission, and, unless I was completely
 unable to do so, have every solution able to solve both parts in under the 15-second mark they suggest, on my 2017
