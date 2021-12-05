@@ -58,6 +58,9 @@ I took a day off on day 20, but I went back and did it by hand the next day for 
 
 Note: Times are from time of challenge release, not start time to completion time
 
+# Other Years' Solutions
+[List of Advent of Code Repos](https://github.com/hbiede/hbiede/blob/main/aoc.md)
+
 ## Scripting initially based on a script from [Ullaakut](https://github.com/Ullaakut/aoc19). Expanded upon by [HBiede](https://github.com/hbiede)
 #### Makefile Automation
 * Automatically downloads the challenge and input for the day (e.g.: `make download DAY=03`)
